@@ -1,0 +1,17 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/Client/AzureIoT/AzureIoT/bin/ARM/Debug
+/Client/AzureIoT/AzureIoT/obj/ARM/Debug
+/Client/AzureIoT/README.md
+/Client/AzureIoT/LICENSE.txt
+/Client/AzureIoT/IoTHub.md
+/Client/AzureIoT/IoTCentral.md
+/Client/AzureIoT/.vs/AzureIoT
+/Client/AzureIoT/AzureIoT/app_manifest.json
+/Server/EHRIoTFunctionApp/Properties/PublishProfiles
+/Local
+/Server/EHRIoTFunctionApp/AzureIoTHubConnectionStringSecrets.cs
+/Artwork/2019/2019-09-14
+/Artwork
