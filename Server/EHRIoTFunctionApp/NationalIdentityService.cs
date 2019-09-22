@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Tangle.Net.Cryptography;
 using Tangle.Net.Entity;
+using Tangle.Net.Repository;
 
 namespace EHRIoTFunctionApp
 {
@@ -15,14 +17,20 @@ namespace EHRIoTFunctionApp
 
         static Dictionary<string, Seed> s_nationalPatientRegistrySeedVault = new Dictionary<string, Seed> { [s_sampleNprId1] = s_sampleNprSeed1, [s_sampleNprId2] = s_sampleNprSeed2 };
 
-        public static Seed GetSeedFromNprId(string nprId)
+        public static List<Address> GetTangleAddressesFromNprId(RestIotaRepository repository, string nprId, int numberOfAddressesNeeded)
         {
+            List<Address> addresses = new List<Address>();
+
+            // Assert if patient id is in our hard-coded registry.
             if (!s_nationalPatientRegistrySeedVault.ContainsKey(nprId))
             {
-                return null;
+                return addresses;
             }
 
-            return s_nationalPatientRegistrySeedVault[nprId];
+            // Get patient seed, request new addresses and return.
+            var patientSeed = s_nationalPatientRegistrySeedVault[nprId];
+            addresses.AddRange(repository.GetNewAddresses(patientSeed, 0, numberOfAddressesNeeded, SecurityLevel.Medium));
+            return addresses;
         }
     }
 }
