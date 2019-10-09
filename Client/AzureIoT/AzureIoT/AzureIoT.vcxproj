@@ -56,7 +56,6 @@
     <ClInclude Include="max30102.h" />
     <ClInclude Include="parson.h" />
     <UpToDateCheckInput Include="app_manifest.json" />
-    <ClInclude Include="mt3620_rdb.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app_manifest.json" />
