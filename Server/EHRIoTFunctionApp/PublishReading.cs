@@ -133,5 +133,10 @@ namespace EHRIoTFunctionApp
         private static string s_pulseArchetypeId = "openEHR-EHR-OBSERVATION.pulse.v1";
         private static string s_pulseObservationCodeId = "at0000"; // Pulse/Heart beat
         private static string s_pulseValueCodeId = "at0004"; // Rate
+        
+        private static string s_bodyTemperatureArchetypeId = "openEHR-EHR-OBSERVATION.body_temperature.v2";
+        private static string s_bodyTemperatureObservationCodeId = "at0000"; // Body temperature
+        private static string s_bodyTemperatureValueCodeId = "at0004"; // Temperature
+        
     }
 }
